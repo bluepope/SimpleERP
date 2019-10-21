@@ -4,7 +4,9 @@ using System.Text;
 
 namespace SimpleERP.Models.Main
 {
-    class VMLogin
+    public class VMLogin
     {
+        public string USER_ID { get; set; }
+        public string PASSWORD { get; set; }
     }
 }

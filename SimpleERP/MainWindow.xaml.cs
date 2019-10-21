@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleERP.Views.Main;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace SimpleERP
     {
         public MainWindow()
         {
+            this.Visibility =  Visibility.Hidden;
+            new LoginWindow().Show();
+            this.Close();
+
             InitializeComponent();
         }
     }
