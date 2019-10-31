@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="Login" Height="440" Width="515">
     <Grid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="85,169,0,0" VerticalAlignment="Top"/>
+        <Label Content="아이티" HorizontalAlignment="Left" Margin="85,169,0,0" VerticalAlignment="Top"/>
         <TextBox Text="{Binding USER_ID}"  HorizontalAlignment="Left" Height="26" Margin="176,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
 
-        <Label Content="Label" HorizontalAlignment="Left" Margin="85,250,0,0" VerticalAlignment="Top"/>
-        <PasswordBox Password="{Binding PASSWORD}"  HorizontalAlignment="Left" Height="28" Margin="176,248,0,0" VerticalAlignment="Top" Width="93" />
-        
-        <Button Command="{Binding LoginCmd}" Content="Button" HorizontalAlignment="Left" Height="67" Margin="323,195,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Content="비밀번호" HorizontalAlignment="Left" Margin="85,250,0,0" VerticalAlignment="Top"/>
+        <PasswordBox Name="txtPassword" HorizontalAlignment="Left" Height="28" Margin="176,248,0,0" VerticalAlignment="Top" Width="93" />
+
+        <Button Command="{Binding LoginCmd}" CommandParameter="{Binding ElementName=txtPassword}" Content="Login" HorizontalAlignment="Left" Height="67" Margin="323,195,0,0" VerticalAlignment="Top" Width="101"/>
         
         <Image HorizontalAlignment="Left" Height="123" Margin="36,21,0,0" VerticalAlignment="Top" Width="425"/>
 
