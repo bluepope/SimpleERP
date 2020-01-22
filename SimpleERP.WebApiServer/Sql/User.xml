@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mapper>
+  <select id="GetUserFromId">
+    <![CDATA[
+SELECT
+  A.USER_SEQ
+  ,A.USER_ID
+  ,A.USER_PW
+  ,A.SALT
+  ,A.STATUS
+FROM
+  dbo.T_USER A
+WHERE
+  A.USER_ID = @USER_ID
+    ]]>
+  </select>
+  
+  <select id="GetUser">
+    <![CDATA[
+SELECT
+  A.USER_SEQ
+  ,A.USER_ID
+  ,A.USER_NAME
+  ,A.REG_DATE
+  ,A.UPDATE_DATE
+  ,A.LAST_LOGIN_DATE
+  ,A.STATUS
+  ,ROLES = (SELECT STRING_AGG(AA.ROLE, ',') FROM dbo.T_USER_ROLE AA WHERE AA.USER_SEQ = A.USER_SEQ)
+FROM
+  dbo.T_USER A
+WHERE
+  A.USER_SEQ = @USER_SEQ
+    ]]>
+  </select>
+
+  <update id="UpdateUserPw">
+    <![CDATA[
+UPDATE
+  dbo.T_USER
+SET
+  USER_PW = @USER_PW
+  ,SALT = @SALT
+WHERE
+  USER_SEQ = @USER_SEQ
+    ]]>
+  </update>
+</mapper>
